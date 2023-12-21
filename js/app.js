@@ -8,15 +8,14 @@
 */
 
 // console.log(new Date().toString());
+const today = new Date();
 
 const dateInput = document.getElementById('dateInput');
-const today = new Date();
 const validYear = today.getFullYear() - 21;
 const validMonth = today.getMonth();
 const validDay = today.getDate();
 
 // console.log(today, dateInput, validYear, validMonth, validDay)
-
 // console.log(validYear, validMonth, validDay);
 
 const getDOB =()=> {
@@ -31,20 +30,20 @@ const verifyAge =(date, year, month, day)=> {
     const userDate = date;
     const userYear = year;
     const userMonth = month;
-    const userDay = day;
+    const userDay = day
     
-    if (userYear >= validYear) {
-        if (userMonth >= validMonth) {
-            if (userDay >= validDay) {
+    if (validYear >= userYear) {
+        if (validMonth >= userMonth) {
+            if (validDay >= userDay) {
                 console.log("day is valid")
             } else {
-                console.log("DIE")
+                console.log("denied")
             }
         } else {
-            console.log("DIE")
+            console.log("denied")
         }
     } else {
-        console.log("DIE")
+        console.log("denied")
     }
 };
 
