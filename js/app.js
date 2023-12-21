@@ -7,7 +7,6 @@
     - If the DOB is invalid, display Access Denied
 */
 
-// console.log(new Date().toString());
 const today = new Date();
 
 const validYear = today.getFullYear() - 21;
@@ -72,22 +71,3 @@ const verifyAge =(year, month, day)=> {
     `
     }
 };
-
-// console.log(today.toDateString());
-
-// const then = new Date();
-// const elapsed = then.getTime() - today.getTime();
-
-// console.log(then.toDateString());
-// console.log(elapsed);
-
-
-// const validAge = ;
-// need to do an if else statement on if the age of person is over 21 and if not deny access
-
-// can we do DateNow and then just subtract it by 21 years?
-
-// const ageDistance = Date.parse("12 20 02");
-
-// console.log(today);
-// console.log(ageDistance);
