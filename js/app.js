@@ -10,40 +10,66 @@
 // console.log(new Date().toString());
 const today = new Date();
 
-const dateInput = document.getElementById('dateInput');
 const validYear = today.getFullYear() - 21;
 const validMonth = today.getMonth();
-const validDay = today.getDate();
+const validDay = today.getDate() -1;
 
-// console.log(today, dateInput, validYear, validMonth, validDay)
-// console.log(validYear, validMonth, validDay);
+const dateInput = document.getElementById('dateInput');
+const checkbox = document.getElementById('checkbox');
+
+const message = document.getElementById('message');
+let messageText = ""; 
+
+const validate =()=> {
+    const isChecked = checkbox.checked;
+    if (!isChecked) { // the "!" is used to check if the statement is false. so it reads as "if isn't isChecked: do stuff" or "if isChecked isn't on"
+        messageText = "Check the box, bud"
+        message.innerHTML = `
+            ${messageText}
+        `
+    } else {
+        messageText = "";
+        getDOB();
+    }
+}
 
 const getDOB =()=> {
     const userDate = new Date(dateInput.value);
     const userYear = userDate.getFullYear();
     const userMonth = userDate.getMonth();
     const userDay = userDate.getDate();
-    verifyAge(userDate, userYear, userDay, userMonth);
+    verifyAge(userYear, userMonth, userDay);
 }
 
-const verifyAge =(date, year, month, day)=> {
-    const userDate = date;
+const verifyAge =(year, month, day)=> {
     const userYear = year;
     const userMonth = month;
-    const userDay = day
+    const userDay = day;
     
     if (validYear >= userYear) {
         if (validMonth >= userMonth) {
             if (validDay >= userDay) {
-                console.log("day is valid")
+                messageText = "Haha, you're old"
+                message.innerHTML = `
+                ${messageText}
+            `
             } else {
-                console.log("denied")
+                messageText = "Go to Jail"
+                message.innerHTML = `
+                ${messageText}
+            `
             }
         } else {
-            console.log("denied")
+            messageText = "Go to Jail"
+            message.innerHTML = `
+            ${messageText}
+        `
         }
     } else {
-        console.log("denied")
+        messageText = "Go to Jail"
+        message.innerHTML = `
+        ${messageText}
+    `
     }
 };
 

@@ -23,7 +23,7 @@
                         </label>
                     </div>
                     <div class="row">
-                        <label for="submit" class="text" name="checkbox" id="checkboxLabel">
+                        <label for="checkbox" class="text" name="checkbox" id="checkboxLabel">
                             <div class="col text-center mt-4">
                                 <p class="verify">I verify that the following information is true and punishable by Death if false:</p>
                             </div>
@@ -32,14 +32,15 @@
                     <div class="row justify-content-center">
                         <div class="col-6 text-center">
                             <p class="prompt">Enter your date of birth</p>
-                            <input type="date" name="date" id="dateInput" value="">
+                            <input type="date" name="date" id="dateInput" value="2002-12-21">
                             <div class="submit-buttons">
-                                <input class="my-3" type="submit" name="submit" id="submit" value="Verify your age" onclick="getDOB()">
-                                <input class="mx-2" type="checkbox" id="checkbox" name="checkbox">
+                                <input class="my-3" type="submit" name="submit" id="submit" value="Verify your age" onclick="validate(); return false">
+                                <input class="mx-2" type="checkbox" id="checkbox" name="checkbox" value="" required>
                             </div>
                         </div>
                     </div>
                 </form>
+                <p class="text text-center" id="message">Check the box before you verify</p>
             </div>
         </section>
     </main>
